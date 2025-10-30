@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>{{ category.categoryID ? 'Edit Category' : 'Add Category' }}</h2>
+
+<mat-dialog-content>
+  <form class="category-form" style="display: flex; flex-wrap: wrap; gap: 16px;">
+
+    <!-- Left Column -->
+    <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Category Name</mat-label>
+        <input matInput [(ngModel)]="category.categoryName" name="categoryName">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="category.description" name="description">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>VAT (%)</mat-label>
+        <input matInput type="number" [(ngModel)]="category.vat" name="vat">
+      </mat-form-field>
+    </div>
+
+    <!-- Right Column -->
+    <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Create By</mat-label>
+        <input matInput [(ngModel)]="category.createBy" name="createBy">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Create Date</mat-label>
+        <input matInput type="date" [(ngModel)]="category.createDate" name="createDate">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Update By</mat-label>
+        <input matInput [(ngModel)]="category.updateBy" name="updateBy">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Update Date</mat-label>
+        <input matInput type="date" [(ngModel)]="category.updateDate" name="updateDate">
+      </mat-form-field>
+    </div>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" style="margin-top: 16px;">
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()">
+    {{ category.categoryID ? 'Update' : 'Save' }}
+  </button>
+</mat-dialog-actions>
+

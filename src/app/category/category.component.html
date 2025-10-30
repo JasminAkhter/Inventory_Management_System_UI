@@ -1,0 +1,96 @@
+<div class="category-container">
+
+
+  <div class="toolbar" style="display: flex; justify-content: space-between;
+     align-items: center; margin-bottom: 1px; margin-right: 20px;">
+    <h2>Category List</h2>
+    <button mat-raised-button color="primary" (click)="openDialog()">+ Add Category</button>
+  </div>
+
+
+
+  <table mat-table [dataSource]="categories" class="mat-elevation-z8 full-width-table"
+    style="width: 100%; border-collapse: collapse;">
+
+    <!-- Category ID -->
+    <ng-container matColumnDef="categoryID">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> ID </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.categoryID }}</td>
+    </ng-container>
+
+    <!-- Category Name -->
+    <ng-container matColumnDef="categoryName">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> Name </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.categoryName }}</td>
+    </ng-container>
+
+    <!-- Description -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> Description </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.description }}</td>
+    </ng-container>
+
+    <!-- VAT -->
+    <ng-container matColumnDef="vat">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> VAT (%) </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.vat }}</td>
+    </ng-container>
+
+    <!-- Created By -->
+    <ng-container matColumnDef="createBy">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> Created By </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.createBy }}</td>
+    </ng-container>
+
+    <!-- Created Date -->
+    <ng-container matColumnDef="createDate">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> Created Date </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.createDate | date:
+        'short' }}</td>
+    </ng-container>
+
+    <!-- Updated By -->
+    <ng-container matColumnDef="updateBy">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> Updated By </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.updateBy }}</td>
+    </ng-container>
+
+    <!-- Updated Date -->
+    <ng-container matColumnDef="updateDate">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> Updated Date </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">{{ element.updateDate | date:
+        'short' }}</td>
+    </ng-container>
+
+    <!-- Actions -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef
+        style="background-color: #020e1a; color: white; padding: 8px; text-align: center;"> Actions </th>
+      <td mat-cell *matCellDef="let element" style="padding: 8px; text-align: center;">
+        <button mat-icon-button color="primary" (click)="editCategory(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteCategory(element.categoryID)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Table Rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+
+
+
+</div>
