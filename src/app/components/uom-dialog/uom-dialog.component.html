@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{ uom.uomID ? 'Edit Uom' : 'Add Uom' }}</h2>
+
+<mat-dialog-content>
+    <form class="uom-form" style="display: flex; flex-wrap: wrap; gap: 16px;">
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Uom Name</mat-label>
+            <input matInput [(ngModel)]="uom.uomName" name="uomName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="uom.description" name="description">
+        </mat-form-field>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" style="margin-top: 16px;">
+    <button mat-button (click)="closeDialog()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="save()">
+        {{ uom.uomID ? 'Update' : 'Save' }}
+    </button>
+</mat-dialog-actions>

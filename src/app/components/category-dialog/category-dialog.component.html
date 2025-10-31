@@ -11,18 +11,18 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Description</mat-label>
-        <input matInput [(ngModel)]="category.description" name="description">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" class="full-width">
         <mat-label>VAT (%)</mat-label>
         <input matInput type="number" [(ngModel)]="category.vat" name="vat">
       </mat-form-field>
     </div>
+    
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="category.description" name="description">
+      </mat-form-field>
 
     <!-- Right Column -->
-    <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
+    <!-- <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Create By</mat-label>
         <input matInput [(ngModel)]="category.createBy" name="createBy">
@@ -42,13 +42,13 @@
         <mat-label>Update Date</mat-label>
         <input matInput type="date" [(ngModel)]="category.updateDate" name="updateDate">
       </mat-form-field>
-    </div>
+    </div> -->
 
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end" style="margin-top: 16px;">
-  <button mat-button (click)="close()">Cancel</button>
+  <button mat-button (click)="closeDialog()">Cancel</button>
   <button mat-raised-button color="primary" (click)="save()">
     {{ category.categoryID ? 'Update' : 'Save' }}
   </button>

@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
 import { importProvidersFrom } from '@angular/core';
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -23,8 +20,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { CategoryComponent } from './category/category.component';
-import { CategoryDialogComponent } from './category-dialog/category-dialog.component';
+import { CategoryComponent } from './components/category/category.component';
+import { DeleteConfirmComponent } from './components/delete-confirm/delete-confirm.component';
+import { CategoryDialogComponent } from './components/category-dialog/category-dialog.component';
+import { UniteOfMeasurementComponent } from './components/unite-of-measurement/unite-of-measurement.component';
+import { UomDialogComponent } from './components/uom-dialog/uom-dialog.component';
 
 
 
@@ -32,7 +32,10 @@ import { CategoryDialogComponent } from './category-dialog/category-dialog.compo
   declarations: [
     AppComponent,
     CategoryComponent,
+    DeleteConfirmComponent,
     CategoryDialogComponent,
+    UniteOfMeasurementComponent,
+    UomDialogComponent,
   ],
 
   imports: [

@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Category } from '../models/category';
-import { CategoryService } from '../services/category.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Category } from '../../models/category';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-category-dialog',
@@ -24,11 +24,8 @@ export class CategoryDialogComponent {
       categoryID: '',
       categoryName: '',
       description: '',
-      vat: 0,
-      createBy: '',
-      createDate: undefined,
-      updateBy: '',
-      updateDate: undefined
+      vat: 0
+      
     };
   }
 
@@ -54,7 +51,7 @@ export class CategoryDialogComponent {
     }
   }
 
-  close() {
+  closeDialog() {
     this.dialogRef.close();
   }
 }

@@ -2,8 +2,8 @@ export interface Uom {
     uomID: string;
     uomName: string;
     description: string;
-    createBy: string;
+    createBy?: string;
     createDate?: string;
-    updateBy: string;
+    updateBy?: string;
     updateDate?: string;
 }
