@@ -25,6 +25,9 @@ import { DeleteConfirmComponent } from './components/delete-confirm/delete-confi
 import { CategoryDialogComponent } from './components/category-dialog/category-dialog.component';
 import { UniteOfMeasurementComponent } from './components/unite-of-measurement/unite-of-measurement.component';
 import { UomDialogComponent } from './components/uom-dialog/uom-dialog.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 
@@ -57,6 +60,9 @@ import { UomDialogComponent } from './components/uom-dialog/uom-dialog.component
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
     HttpClientModule
   ],
 

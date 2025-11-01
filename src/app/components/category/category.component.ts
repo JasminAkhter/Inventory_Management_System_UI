@@ -100,19 +100,6 @@ export class CategoryComponent implements OnInit {
   }
 
 
-  // editCategory(category: Category) {
-  //   const dialogRef = this.dialog.open(CategoryDialogComponent, {
-  //     width: '400px',
-  //     data: category
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     if (result === 'saved') {
-  //       this.loadCategories();
-  //     }
-  //   });
-  // }
-
   deleteCategory(category: any) {
     if (!category?.categoryID) return;
 
@@ -145,28 +132,6 @@ export class CategoryComponent implements OnInit {
       }
     });
   }
-
-
-  // deleteCategory(id: string) {
-  //   if (!id) return;
-
-  //   if (confirm('Are you sure you want to delete this category?')) {
-  //     this.categoryService.delete(id).subscribe({
-  //       next: () => {
-  //         this.snackBar.open('Category deleted successfully!', 'Close', {
-  //           duration: 2000
-  //         });
-  //         this.loadCategories();
-  //       },
-  //       error: (err) => {
-  //         console.error('Error deleting category:', err);
-  //         this.snackBar.open('Failed to delete category', 'Close', {
-  //           duration: 3000
-  //         });
-  //       }
-  //     });
-  //   }
-  // }
 
 
 

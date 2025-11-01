@@ -1,14 +1,24 @@
 <h2 mat-dialog-title>{{ uom.uomID ? 'Edit Uom' : 'Add Uom' }}</h2>
+<div class="dialog-header">
+    <button mat-icon-button (click)="closeDialog()" (mouseenter)="hover=true" (mouseleave)="hover=false"
+        [style.background-color]="hover ? 'red' : 'transparent'" [style.color]="hover ? 'white' : 'black'"
+        style="position: absolute; top: 8px; right: 10px;">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
 
 <mat-dialog-content>
+
+
     <form class="uom-form" style="display: flex; flex-wrap: wrap; gap: 16px;">
 
-        <mat-form-field appearance="fill" class="full-width">
+        <mat-form-field appearance="fill" style="width: 100%;">
             <mat-label>Uom Name</mat-label>
             <input matInput [(ngModel)]="uom.uomName" name="uomName">
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="full-width">
+        <mat-form-field appearance="fill" style="width: 100%;">
             <mat-label>Description</mat-label>
             <input matInput [(ngModel)]="uom.description" name="description">
         </mat-form-field>

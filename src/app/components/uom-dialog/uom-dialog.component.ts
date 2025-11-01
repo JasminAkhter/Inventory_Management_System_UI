@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UomDialogComponent {
   uom: Uom;
+  hover = false;
 
   constructor(
     private dialogRef: MatDialogRef<UomDialogComponent>,
